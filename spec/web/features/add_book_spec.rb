@@ -25,4 +25,19 @@ describe '本の登録' do
     # ページ内に"New book"という文字が含まれる
     assert page.has_content?('New book')
   end
+
+  it 'パラメーターにエラーが含まれている場合、エラー一覧が表示される' do
+    visit '/books/new'
+
+    within 'form#book-form' do
+      # 何も埋めずに"Create"ボタンを押す
+      click_button 'Create'
+    end
+
+    current_path.must_equal('/books')
+
+    assert page.has_content?('There was a problem with your submission')
+    assert page.has_content?('Title must be filled')
+    assert page.has_content?('Author must be filled')
+  end
 end
