@@ -1,4 +1,7 @@
 <h2>Add book</h2>
+
+<%= link_to 'Index', routes.books_path, class: 'btn grey lighten-5 black-text' %>
+
 <% unless params.valid? %>
   <div class="errors">
     <h3>There was a problem with your submission</h3>
@@ -23,7 +26,7 @@
     end
 
     div class: 'controls' do
-      submit 'Create Book'
+      submit 'Create Book', class: 'waves-effect waves-light btn'
     end
   end
 %>

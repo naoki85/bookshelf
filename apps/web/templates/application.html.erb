@@ -2,10 +2,23 @@
 <html>
   <head>
     <title>Bookshelf</title>
-    <%= favicon %>
+    <%= stylesheet 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   </head>
   <body>
-    <h1>Bookshelf</h1>
-    <%= yield %>
+    <nav>
+      <div class="nav-wrapper teal accent-3">
+        <div class="container">
+          <%= link_to 'Bookshelf', routes.books_path, class: 'brand-logo left' %>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= javascript 'https://code.jquery.com/jquery-3.1.0.min.js', integrity: 'sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=' %>
+    <%= javascript 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js', integrity: 'sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=' %>
   </body>
 </html>

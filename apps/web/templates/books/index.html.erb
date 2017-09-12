@@ -1,14 +1,16 @@
 <h2>All books</h2>
 
+<%= link_to 'New book', routes.new_book_path, class: 'waves-effect waves-light btn' %>
+
 <% if books.any? %>
-  <div id="books">
+  <ul id="books" class="collection">
     <% books.each do |book| %>
-      <div class="book">
-        <h2><%= book.title %></h2>
+      <li class="book collection-item">
+        <h3><%= book.title %></h3>
         <p><%= book.author %></p>
-      </div>
+      </li>
     <% end %>
-  </div>
+  </ul>
 <% else %>
   <p class="placeholder">There are no books yet.</p>
 <% end %>

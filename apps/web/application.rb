@@ -249,6 +249,8 @@ module Web
         frame-src 'self';
         media-src 'self'
       }
+      security.content_security_policy "default-src none; script-src 'self' https://code.jquery.com;"
+      security.content_security_policy "font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com;"
 
       ##
       # FRAMEWORKS
@@ -312,9 +314,9 @@ module Web
         #
         # See: http://hanamirb.org/guides/assets/content-delivery-network
         #
-        # scheme 'https'
-        # host   'cdn.example.org'
-        # port   443
+        scheme 'https'
+        host   'cdnjs.cloudflare.com'
+        port   443
 
         # Subresource Integrity
         #
